@@ -57,5 +57,4 @@ Right now, the builds take a long time and don't differentiate between environme
 - Only use docker when using an environment that _isn't_ an AWS Linux environment (so that CD doesn't need to rebuild every time)
 - Make this plugin work cross-platform
 - Fix the unit testing so that these updates are tested regularly
-- Replace the native Serverless functionality that excludes dependencies and zips files together. Right now it performs the native functionality, then this plugin takes over and overwrites the previous work.
 - Make it a real, downloadable npm package OR update it so that the updates will work alongside the original repository functionality and evetually merge it? TBD.
