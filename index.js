@@ -8,7 +8,7 @@ const {
   removeVendorHelper,
 } = require('./lib/zip');
 const { cleanup, cleanupCache } = require('./lib/clean');
-const { buildDockerPoetryMonorepo, zipMonoRepoDeps } = require('./lib/monorepo')
+const { buildDockerPoetryMonorepo, addDepsToZipFile } = require('./lib/monorepo')
 
 BbPromise.promisifyAll(fse);
 
@@ -185,7 +185,7 @@ class ServerlessPythonRequirements {
         return;
       }
       return BbPromise.bind(this)
-        .then(zipMonoRepoDeps)
+        .then(addDepsToZipFile)
     };
 
     const invalidateCaches = () => {

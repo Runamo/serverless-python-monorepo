@@ -49,7 +49,7 @@ At deploy time, this plugin:
 - Updates the pyproject.toml file to remove any [`develop`](https://python-poetry.org/docs/dependency-specification/#path-dependencies) attributes from any dependencies
 - Runs a docker poetry install command against the custom docker image using the mounted temp directory
 - Copies the built dependencies from the shared mounted directory to the .serverless/requirements directory of the target deployment directory
-- Zips everything together in a deployable zip file so that Serverless will use that zip file for deployment
+- Adds the built dependencies to the zip file that the Serverless `package` service generates
 ## Missing Functionality
 Right now, the builds take a long time and don't differentiate between environments.  This plugin is also only confirmed to work on Macs.  A few things will go a long way to turn this into a real plugin:
 
